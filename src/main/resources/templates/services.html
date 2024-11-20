@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" 
+ data-th-replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+	 <title>Service page</title>
+	
+</head>
+<body>
+
+<div id="content">
+<!-- Services Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6">Our Services</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">We provide a range of services designed to make your contact management easy, secure, and efficient.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Service 1 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg dark:text-white">
+                    <i class="fas fa-address-card"></i>
+                    <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Contact Management</h4>
+                    <p class="text-gray-600 dark:text-gray-400">Keep track of all your contacts in one place with our intuitive platform. Easily add, update, and search your contacts.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg dark:text-white">
+                    <i class="fas fa-lock"></i>
+                    <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Data Security</h4>
+                    <p class="text-gray-600 dark:text-gray-400">Your contact information is important. We ensure that all your data is stored securely using encryption techniques.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg dark:text-white">
+                    <i class="fas fa-sync-alt"></i>
+                    <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Cross-Platform Sync</h4>
+                    <p class="text-gray-600 dark:text-gray-400">Access your contacts anytime, anywhere. Our platform syncs your data across devices seamlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-white py-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>&copy; 2024 Smart Contact Manager. All rights reserved.</p>
+        </div>
+    </footer>
+ 
+</div>
+
+<script>
+  console.log("Services page");
+</script>
+</body>
+</html>

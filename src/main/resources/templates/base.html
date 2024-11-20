@@ -1,0 +1,51 @@
+<!doctype html>
+<html 
+
+lang="en"
+ th:fragment="parent(content,title,script)"
+ xlmns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title data-th-replace="${title}">SCM</title>
+	<link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+	<link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+	<link rel="stylesheet" data-th-href="@{'/css/style.css'}" />
+	
+	<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body class="bg-gray-200 dark:bg-gray-900 dark:text-white">
+	
+<!-- common header file -->
+
+
+      <!--  user is logged in : navbar -->
+    <div th:if="${loggedInuser}">
+      <div data-th-replace="~{user/user_navbar::user-navbar}"></div>
+    </div>
+
+     <!-- user is not logged : navbar -->
+    <div th:unless="${loggedInuser}">
+     <div data-th-replace="~{navbar::navbar}"></div>
+     </div>	
+	
+	<!-- main content -->
+	<div class="p-4">
+	   <section data-th-replace="${content}"></section>
+	</div>
+	
+	<!-- flowbite content -->
+	
+	 <!-- common footer -->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script data-th-src="@{'/js/script.js'}"></script>
+ <th:block data-th-replace="${script}"></th:block>
+
+</body>
+</html>

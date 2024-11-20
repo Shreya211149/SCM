@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" 
+   data-th-replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+	 <title data-th-text="${loggedInuser.name}">Profile page</title>
+	 
+</head>
+<body>
+
+<div id="content" class="sm:pl-64 pt-12">
+
+<!-- user is logged in : sidebar -->
+
+      <div data-th-if="${loggedInuser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+      </div>
+
+<div class=" flex  flex-col justify-center items-center" >
+<!-- Profile Card -->
+    <div class="block  border-b-[60px] border-pink-500 max-w-sm w-full bg-gray-100 dark:bg-gray-800 mt-20 text-white rounded-lg shadow-lg p-6 text-center">
+
+        <!-- Profile Image -->
+        <div class="flex justify-center">
+            <img  
+                 data-th-src="@{${loggedInuser.profilePic}}" 
+                 onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8AJM9wkP__z2M-hovSAWcTb_9XJ6smy3NKw&s'"
+                 alt="Profile Picture"
+                 class="w-40 h-40 rounded-full border-4 border-pink-500 object-cover"/>
+        </div>
+        
+        <!-- User Name -->
+        <h2 class="mt-4 text-2xl font-bold text-gray-800 dark:text-white" data-th-text="${loggedInuser.name}">Your Name</h2>
+        
+        <!-- Email -->
+        <p class="text-sm text-gray-700 dark:text-gray-300" data-th-text="${loggedInuser.email}">yourname@gmail.com</p>
+
+        <!-- Phone Number (optional) -->
+        <p class="text-sm text-gray-600 dark:text-gray-300 mt-1" data-th-text="${loggedInuser.phoneNumber}">+1234567890</p>
+
+        <!-- About Section -->
+        <p class="mt-2 text-gray-800 dark:text-gray-100" data-th-text="${loggedInuser.about != null ? loggedInuser.about : 'About me...'}">
+            About
+        </p>
+
+        <!-- Verification Badges -->
+        <div class="flex justify-center mt-4  space-x-4">
+            <span class="bg-green-700 dark:bg-green-500 text-white px-3 py-1 rounded-full text-xs" data-th-classappend="${loggedInuser.emailVerified} ? 'bg-green-700 dark:bg-green-500' : 'bg-red-700 dark:bg-red-500'">
+                   <span data-th-text="${loggedInuser.emailVerified ? 'Email Verified' : 'Email Not Verified'}">
+                   </span>
+            </span>
+            <span class="bg-green-700 dark:bg-green-500 text-white px-3 py-1 rounded-full text-xs" data-th-classappend="${loggedInuser.phonenumVerified} ? 'bg-green-700 dark:bg-green-500' : 'bg-red-700 dark:bg-red-500'">
+                      <span data-th-text="${loggedInuser.phonenumVerified ? 'Phone Verified' : 'Phone Not Verified'}">
+                      </span>
+            </span>
+        </div>
+                 
+           
+    </div>
+    
+
+</div>
+<!-- Pink Bottom Border -->
+<!-- <div class=" h-12 w-full bg-pink-500 rounded-b-lg"></div> -->
+
+</div>
+
+<script>
+  console.log("Profile  page");
+</script>
+</body>
+</html>
