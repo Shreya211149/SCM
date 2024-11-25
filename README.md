@@ -1,4 +1,4 @@
-#Domain Smart Contact Manger
+# Domain Smart Contact Manger
 ## My project look like this
 ![scm1](https://github.com/user-attachments/assets/f7ece20f-f6d1-4474-9b33-57ea941c3e17)
 
